@@ -1,10 +1,10 @@
+Aqui está o README revisado com as novas informações sobre o processo de migração e CI/CD:
 
+---
 
 # ProspAI
 
-**ProspAI** é uma aplicação de inteligência artificial desenvolvida para otimizar estratégias de vendas através da análise de dados de clientes. A aplicação oferece uma API RESTful robusta e uma interface MVC baseada em Spring Boot, que facilita a navegação e a utilização dos recursos disponíveis.
-
-A aplicação já está hospedada na nuvem e pode ser acessada através do link base: [ProspAI na Azure](https://prospai.azurewebsites.net/clientes).
+**ProspAI** é uma aplicação de inteligência artificial desenvolvida para otimizar estratégias de vendas através da análise de dados de clientes. A aplicação oferece uma API RESTful robusta e uma interface MVC baseada em Spring Boot, hospedada na nuvem, acessível pelo link: [ProspAI na Azure](https://prospai.azurewebsites.net/clientes).
 
 ## Índice
 
@@ -12,114 +12,100 @@ A aplicação já está hospedada na nuvem e pode ser acessada através do link 
 2. [Arquitetura](#arquitetura)
 3. [Recursos Principais](#recursos-principais)
 4. [Tecnologias Utilizadas](#tecnologias-utilizadas)
-5. [Padrões de Projeto Implementados](#padrões-de-projeto-implementados)
-6. [Endpoints da API](#endpoints-da-api)
-7. [Funcionalidades da Interface MVC](#funcionalidades-da-interface-mvc)
-8. [Instalação e Configuração](#instalação-e-configuração)
-9. [Como Contribuir](#como-contribuir)
-10. [Licença](#licença)
+5. [Pipeline CI/CD e Migração para Azure](#pipeline-ci-cd-e-migração-para-azure)
+6. [Padrões de Projeto Implementados](#padrões-de-projeto-implementados)
+7. [Endpoints da API](#endpoints-da-api)
+8. [Funcionalidades da Interface MVC](#funcionalidades-da-interface-mvc)
+9. [Instalação e Configuração](#instalação-e-configuração)
+10. [Como Contribuir](#como-contribuir)
+11. [Licença](#licença)
 
 ## Visão Geral do Projeto
 
-**ProspAI** é uma plataforma que combina inteligência artificial e análise de dados para melhorar a tomada de decisão em vendas. Através da integração com fontes de dados externas, como Reclame Aqui e Procon, a aplicação consegue analisar feedbacks de clientes e oferecer predições e relatórios detalhados para otimização de estratégias de vendas.
+**ProspAI** é uma plataforma que combina inteligência artificial e análise de dados para melhorar a tomada de decisão em vendas. Através da integração com fontes externas, como Reclame Aqui e Procon, a aplicação analisa feedbacks de clientes e gera predições e relatórios detalhados para otimização de estratégias de vendas.
 
 ## Arquitetura
 
-A aplicação ProspAI é composta de duas partes principais:
+A aplicação é composta por:
 
-1. **API RESTful**: Construída utilizando Spring Boot, oferecendo endpoints para operações CRUD sobre clientes, feedbacks, predições, relatórios, estratégias de vendas, e usuários.
-   
-2. **Interface MVC**: Baseada em Thymeleaf, a interface MVC proporciona uma experiência de usuário intuitiva e permite a visualização e manipulação dos dados de forma amigável.
+1. **API RESTful**: Utilizando Spring Boot para operações CRUD sobre clientes, feedbacks, predições, relatórios, estratégias de vendas e usuários.
+2. **Interface MVC**: Baseada em Thymeleaf, proporciona uma experiência de navegação amigável.
 
-A aplicação utiliza HATEOAS (Hypermedia as the Engine of Application State) para melhorar a navegabilidade e autodescoberta de recursos na API.
+A aplicação utiliza HATEOAS para melhorar a navegabilidade e autodescoberta dos recursos da API.
 
 ## Recursos Principais
 
-- **Gestão de Clientes**: Criação, edição, visualização, e remoção de clientes.
-- **Gestão de Feedbacks**: Manipulação de feedbacks associados a clientes.
-- **Análise e Predição**: Geração de predições com base nos dados dos clientes.
-- **Relatórios Personalizados**: Criação e gerenciamento de relatórios de vendas e desempenho.
-- **Automação de Estratégias de Vendas**: Definição e implementação de estratégias automáticas para otimização de vendas.
-- **Gestão de Usuários**: Controle de acesso e gerenciamento de usuários da plataforma.
+- Gestão de clientes, feedbacks, predições e relatórios
+- Análise e predição de dados
+- Automação de estratégias de vendas
+- Controle de acesso e gerenciamento de usuários
 
 ## Tecnologias Utilizadas
 
-- Java 21
-- Spring Boot
-- Spring Data JPA com integração ao SQL Server
-- Thymeleaf para a camada de visualização (MVC)
-- HATEOAS para hiperlinks de recursos na API REST
-- OpenAPI/Swagger para documentação da API
-- JavaScript e Bootstrap para interatividade e design responsivo
+- Java 21, Spring Boot, Spring Data JPA com SQL Server
+- Thymeleaf, HATEOAS, OpenAPI/Swagger
+- JavaScript e Bootstrap
+
+## Pipeline CI/CD e Migração para Azure
+
+Este projeto inclui um processo de migração e pipeline CI/CD configurado no Azure DevOps, implementado pelos integrantes do grupo ProspAI:
+
+### Integrantes
+
+- Aleck Ramos Cappucci – RM551340
+- David Bryan Viana – RM551236
+- Gabriel Lima – RM99743
+- Giovanna Alvarez – RM98892
+- Murilo Matos – RM552525
+
+### Links Importantes
+
+- **Projeto no Azure DevOps:** [Link do Projeto](#)
+- **Repositório no Azure DevOps:** [Link do Repos](#)
+- **Vídeo no YouTube:** [Link do Vídeo](#)
+
+### Etapas do Projeto
+
+1. **Configuração Inicial**: Criação do projeto e banco de dados no Azure, com 6 tabelas.
+2. **Azure Boards**: Tarefa "Implementar ProspAI no Azure DevOps" criada e atribuída com status ativo.
+3. **Azure Repos**: Importação do código, criação de branch com proteção e revisão padrão.
+4. **Azure Pipeline - Build (CI)**: Configuração de pipeline de build com JUnit, executada manualmente e com logs disponíveis.
+5. **Azure Pipeline - Release (CD)**: Configuração de pipeline de release, executada manualmente, publicando na nuvem.
+6. **Execução de Alterações e PR**: Simulação de alteração de código, criação de PR, aprovação e merge com a branch principal.
+7. **Execução Automática de Pipelines**: Build e release disparados automaticamente após o merge, com logs detalhados.
+
+### Apresentação em Vídeo
+
+O vídeo inclui:
+- Execução ponta a ponta do projeto e pipelines (CI e CD)
+- Demonstração CRUD da tabela de clientes no banco de dados em nuvem
 
 ## Padrões de Projeto Implementados
 
-- **DTO (Data Transfer Object)**: Utilizados para transferir dados entre a camada de serviço e a camada de apresentação.
-- **HATEOAS**: Implementado para melhorar a navegabilidade da API, fornecendo links para operações relacionadas nos objetos de resposta.
-- **Validação de Dados**: Utilização de Bean Validation para garantir a integridade dos dados recebidos e processados pela API.
+- **DTO**: Transferência de dados entre camadas de serviço e apresentação.
+- **HATEOAS**: Melhora a navegabilidade da API com links para operações relacionadas.
+- **Validação de Dados**: Bean Validation para garantir integridade dos dados.
 
 ## Endpoints da API
 
-Abaixo está a lista de principais endpoints da API RESTful disponíveis:
-
 ### Clientes (/api/clientes)
-- `GET /api/clientes` - Retorna todos os clientes.
-- `GET /api/clientes/{id}` - Retorna um cliente específico por ID.
-- `POST /api/clientes` - Cria um novo cliente.
-- `PUT /api/clientes/{id}` - Atualiza um cliente existente.
-- `DELETE /api/clientes/{id}` - Deleta um cliente.
 
-### Feedbacks (/api/feedbacks)
-- `GET /api/feedbacks` - Retorna todos os feedbacks.
-- `GET /api/feedbacks/{id}` - Retorna um feedback específico por ID.
-- `POST /api/feedbacks/cliente/{clienteId}` - Cria um feedback para um cliente específico.
-- `PUT /api/feedbacks/{id}` - Atualiza um feedback existente.
-- `DELETE /api/feedbacks/{id}` - Deleta um feedback.
+- `GET /api/clientes` - Todos os clientes
+- `GET /api/clientes/{id}` - Cliente específico
+- `POST /api/clientes` - Novo cliente
+- `PUT /api/clientes/{id}` - Atualiza cliente
+- `DELETE /api/clientes/{id}` - Remove cliente
 
-### Predições (/api/predictions)
-- `GET /api/predictions` - Retorna todas as predições.
-- `GET /api/predictions/{id}` - Retorna uma predição específica por ID.
-- `POST /api/predictions/cliente/{clienteId}` - Cria uma predição para um cliente específico.
-- `PUT /api/predictions/{id}` - Atualiza uma predição existente.
-- `DELETE /api/predictions/{id}` - Deleta uma predição.
-
-### Relatórios (/api/reports)
-- `GET /api/reports` - Retorna todos os relatórios.
-- `GET /api/reports/{id}` - Retorna um relatório específico por ID.
-- `POST /api/reports` - Cria um novo relatório.
-- `PUT /api/reports/{id}` - Atualiza um relatório existente.
-- `DELETE /api/reports/{id}` - Deleta um relatório.
-
-### Estratégias de Vendas (/api/sales-strategies)
-- `GET /api/sales-strategies` - Retorna todas as estratégias de vendas.
-- `GET /api/sales-strategies/{id}` - Retorna uma estratégia de vendas específica por ID.
-- `POST /api/sales-strategies` - Cria uma nova estratégia de vendas.
-- `PUT /api/sales-strategies/{id}` - Atualiza uma estratégia de vendas existente.
-- `DELETE /api/sales-strategies/{id}` - Deleta uma estratégia de vendas.
-
-### Usuários (/api/usuarios)
-- `GET /api/usuarios` - Retorna todos os usuários.
-- `GET /api/usuarios/{id}` - Retorna um usuário específico por ID.
-- `POST /api/usuarios` - Cria um novo usuário.
-- `PUT /api/usuarios/{id}` - Atualiza um usuário existente.
-- `DELETE /api/usuarios/{id}` - Deleta um usuário.
+Outros endpoints incluem feedbacks, predições, relatórios, estratégias de vendas e usuários, todos com operações CRUD.
 
 ### Documentação Swagger
-Para testar e visualizar a documentação dos endpoints da API, acesse:
 
-- **Ambiente Local:** [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
-- **Ambiente na Nuvem (Azure):** [https://prospai.azurewebsites.net/swagger-ui.html](https://prospai.azurewebsites.net/swagger-ui.html)
+- **Local:** [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+- **Nuvem (Azure):** [https://prospai.azurewebsites.net/swagger-ui.html](https://prospai.azurewebsites.net/swagger-ui.html)
 
 ## Funcionalidades da Interface MVC
 
-A interface MVC oferece funcionalidades interativas para a gestão de todas as entidades mencionadas acima:
-
-- **Clientes:** `/clientes` - Permite visualizar, adicionar, editar, e deletar clientes.
-- **Feedbacks:** `/feedbacks` - Gerenciamento de feedbacks dos clientes.
-- **Predições:** `/predictions` - Criação e edição de predições baseadas em dados de clientes.
-- **Relatórios:** `/reports` - Geração e visualização de relatórios de desempenho.
-- **Estratégias de Vendas:** `/sales-strategies` - Implementação e gerenciamento de estratégias de vendas.
-- **Usuários:** `/usuarios` - Gestão de usuários com controle de acesso e permissões.
+A interface MVC facilita a gestão de clientes, feedbacks, predições, relatórios, estratégias de vendas e usuários, com URLs como `/clientes` para gerenciar clientes.
 
 ## Instalação e Configuração
 
@@ -128,18 +114,12 @@ A interface MVC oferece funcionalidades interativas para a gestão de todas as e
    git clone https://github.com/seu-usuario/prospai.git
    cd prospai
    ```
-
-2. **Configure o Banco de Dados:**
-   - A aplicação utiliza SQL Server. Atualize as configurações do banco de dados no arquivo `application.properties` conforme necessário.
-
-3. **Execute a Aplicação:**
-   - Utilize o Maven ou qualquer IDE Java para compilar e executar o projeto:
+2. **Configure o Banco de Dados** no arquivo `application.properties` para SQL Server.
+3. **Execute a Aplicação**:
    ```bash
    mvn spring-boot:run
    ```
-
-4. **Acesse a Aplicação:**
-   - Acesse a aplicação através do navegador: [http://localhost:8080/clientes](http://localhost:8080/clientes) ou use o link da nuvem: [ProspAI na Azure](https://prospai.azurewebsites.net/clientes).
+4. **Acesse a Aplicação** em [http://localhost:8080/clientes](http://localhost:8080/clientes) ou na nuvem em [ProspAI na Azure](https://prospai.azurewebsites.net/clientes).
 
 ## Como Contribuir
 
@@ -164,4 +144,3 @@ Este projeto é licenciado sob os termos da MIT License.
 
 ---
 
-Sinta-se à vontade para contribuir com melhorias e novas funcionalidades para o ProspAI!
